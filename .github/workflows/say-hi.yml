@@ -1,0 +1,8 @@
+name: "Say hi"
+on: push
+jobs:
+    say-hi:
+        name: "Print hi on console"
+        runs-on: ubuntu-latest
+        steps: 
+            - run: echo "Hi, developer!"
