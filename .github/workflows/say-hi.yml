@@ -1,0 +1,16 @@
+name: "Say hi"
+on: push
+jobs:
+    say-hi:
+        name: "Print hi on console"
+        runs-on: ubuntu-latest
+        steps: 
+            - run: echo "Hi, developer!"
+    test-app:
+        name: "Test application"
+        runs-on: ubuntu-latest
+        steps:
+            # A action checkout permite que o código do repositório possa ser acessado pelo GitHub Actions
+            - uses: actions/checkout@v6.0.2
+            - run: pip3 install -r ./requirements.txt
+            - run: pytest
